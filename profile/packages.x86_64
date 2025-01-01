@@ -163,9 +163,10 @@ mesa-utils
 
 ## GPU Drivers (Nvidia) ------------------------------
 # xf86-video-nouveau
-nvidia
+nvidia-dkms
 nvidia-utils
 nvidia-settings
+opencl-nvidia
 
 ## Hypervisors ------------------------------
 # virtualbox-guest-utils
@@ -316,6 +317,7 @@ yad
 # WMs
 archcraft-openbox
 archcraft-bspwm
+archcraft-blackbox
 
 # Archcraft Packages
 archcraft-cursors
@@ -339,7 +341,7 @@ archcraft-ranger
 # archcraft-vim
 archcraft-config-geany
 archcraft-config-music
-archcraft-config-qt
+# archcraft-config-qt
 archcraft-hooks-extra
 archcraft-hooks-zsh
 
@@ -427,5 +429,51 @@ perl-linux-desktopfiles
 rofi-lbonn-wayland-git
 xfce-polkit
 paru
+
+## MY APPS
+bibata-cursor-theme-bin
+ripgrep
+pavucontrol
+pulseaudio-bluetooth
+numlockx
+git
+htop
+pamac-gtk3
+mkinitcpio-firmware
+xfce4-clipman-plugin
+smplayer-skins
+smplayer-themes
+smplayer
+mousepad
+gnome-disk-utility
+downgrade
+telegram-desktop
+termius
+ttf-iosevka-ss12
+librewolf
+pixelflasher
+stremio
+debtap
+hiddify-next-bin
+Papirus-EED
+Zafiro-Nord-White-Blue-ED
+Zafiro-White-ED
+Fantome
+Fantome-rr
+Fantome-bt
+scrcpy
+libvirt
+virglrenderer
+spice-vdagent
+qemu-hw-display-virtio-gpu-gl
+qemu-guest-agent
+xf86-video-vmware
+vmware-tools
+virtualbox-host-dkms
+virtualbox
+# virtualbox-host-modules-arch
+virtualbox-guest-iso
+virtualbox-guest-utils-nox
+virtualbox-ext-oracle
 
 ## EOF ------------------------------
