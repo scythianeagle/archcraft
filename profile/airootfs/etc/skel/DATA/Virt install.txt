@@ -1,0 +1,203 @@
+LC_ALL=C lscpu | grep Virtualization
+
+
+sudo pacman -S --needed spice-gtk spice-vdagent virtualgl xf86-video-qxl qemu-guest-agent
+
+
+
+sudo pacman -Sy --needed qemu-desktop qemu-guest-agent vde2 ovmf bridge-utils gnu-netcat virt-manager spice-vdagent spice-gtk libvirt dmidecode xf86-video-qxl virtualgl qemu-hw-display-virtio-gpu-gl virglrenderer dnsmasq libvirt-glib libsecret libosinfo libgudev libarchive libvirt
+
+
+gnome-boxes:
+
+sudo pacman -Sy --needed gnome-boxes cdrtools virglrenderer gtksourceview4 libarchive libgudev libhandy libosinfo libsecret libvirt-glib mtools spice-gtk tracker3 webkit2gtk qemu-guest-agent vde2 edk2-ovmf bridge-utils gnu-netcat spice-vdagent spice-gtk spice-vdagent qemu-hw-display-virtio-gpu-gl xf86-video-qxl dnsmasq virtualgl spice-gtk spice-vdagent virtualgl xf86-video-qxl
+
+
+
+sudo pacman -Rdd iptables --noconfirm
+
+sudo pacman -S --needed qemu libvirt  bridge-utils spice-vdagent xf86-video-qxl vde2 dmidecode dnsmasq
+
+
+
+
+
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+systemctl status libvirtd.service
+
+
+sudo virsh net-start default
+sudo virsh net-autostart default
+virsh net-list --all
+
+
+
+
+
+sudo nano br10.xml
+
+sudo virsh net-define br10.xml
+
+sudo virsh net-start br10
+
+sudo virsh net-autostart br10
+
+
+Failed to initialize a valid firewall backend
+
+
+
+
+sudo pacman -S --needed qemu virt-manager ebtables
+
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
+sudo groupadd libvirtd
+sudo usermod -aG libvirtd emam
+sudo usermod -aG libvirt emam
+sudo groupadd libvirt-qemu
+sudo usermod -aG libvirt-qemu emam
+sudo groupadd kvm
+sudo usermod -aG kvm emam
+
+
+
+
+sudo systemctl status libvirtd
+
+
+
+xrandr -s 1920x1080 
+
+
+sudo qemu-img convert -f vdi -O qcow2 /mnt/241229F12BA5515A/VMs/ArchBuildCraft/ArchBuildCraft.vbox /var/lib/libvirt/images/ArchBuildCraft.qcow2
+
+
+
+
+1-
+qemu-img create -f qcow2 Arco.img 20G
+
+
+2-
+qemu-system-x86_64 -enable-kvm -cdrom arcoK.iso -boot menu=on -drive file=Arco.img  -m 5G -vga qxl -display sdl,gl=on
+
+
+(((qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=Arco.img  -m 5G -vga qxl -display sdl,gl=on nvdimm=on -cpu x86 host -spice disable-copy-paste=off -spice disable-agent-file-xfer=off)))
+
+
+
+qemu-system-x86_64 -enable-kvm -boot menu=on -drive file=Arco.img  -m 5G -vga xql -display sdl,gl=on -spice disable-copy-paste=off -spice disable-agent-file-xfer=off
+
+
+
+
+
+
+
+
+sudo modprobe qxl bochs_drm 
+
+
+
+
+
+
+
+
+
+
+qemu-img resize disk_image +10G
+
+nvdimm=on|off
+
+
+
+-spice option[,option[,...]]
+
+disable-copy-paste=on|off
+
+disable-agent-file-xfer=on|off
+
+
+
+
+
+-full-screen
+
+
+
+
+Ctrl-Alt-f
+    Toggle full screen
+    
+Ctrl-Alt-+
+    Enlarge the screen
+
+
+
+Ctrl-a x
+    Exit emulator
+    
+Ctrl-a s
+    Save disk data back to file (if -snapshot)
+
+
+
+
+
+
+
+
+Qemu:
+
+sudo pacman -Rdd iptables --noconfirm
+sudo pacman -S --noconfirm --needed iptables-nft
+sudo pacman -S --noconfirm --needed ebtables 
+
+sudo pacman -S --noconfirm --needed qemu
+sudo pacman -S --noconfirm --needed virt-manager
+sudo pacman -S --noconfirm --needed virt-viewer
+sudo pacman -S --noconfirm --needed dnsmasq
+sudo pacman -S --noconfirm --needed vde2
+sudo pacman -S --noconfirm --needed bridge-utils
+#ovmf
+sudo pacman -S --noconfirm --needed edk2-ovmf
+
+sudo pacman -S --noconfirm --needed spice-vdagent 
+sudo pacman -S --noconfirm --needed xf86-video-qxl
+
+sudo pacman -S --noconfirm --needed dmidecode
+
+#starting service
+
+sudo systemctl enable libvirtd.service
+sudo systemctl start libvirtd.service
+
+
+echo -e "options kvm-intel nested=1" | sudo tee -a /etc/modprobe.d/kvm-intel.conf
+
+user=$(whoami)
+sudo gpasswd -a $user libvirt
+sudo gpasswd -a $user kvm
+
+
+echo '
+nvram = [
+    "/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd"
+]' | sudo tee --append /etc/libvirt/qemu.conf
+
+sudo virsh net-define /etc/libvirt/qemu/networks/default.xml
+
+sudo virsh net-autostart default
+
+sudo systemctl restart libvirtd.service
+
+
+REBOOT  
+
+
+
+
+

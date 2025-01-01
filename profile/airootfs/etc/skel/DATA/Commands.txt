@@ -1,0 +1,1270 @@
+
+nmcli networking off
+
+sudo systemctl stop NetworkManager
+
+sudo ip link set enp5s0f1 down
+
+sudo modprobe -r e1000e
+
+sudo ip link set wlp4s0 down
+
+sudo lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs sudo rmmod
+
+sudo modprobe iwlwifi 11n_disable=1
+
+sudo ip link set wlp4s0 up
+
+sudo systemctl start NetworkManager
+
+nmcli r wifi on
+
+nmcli networking on
+
+
+ROOT
+
+Emamd@mon77
+
+RameshR@66
+
+
+
+
+sudo pacman -Syu intel-ucode
+
+
+sudo pacman -S intel-ucode
+
+
+sshuttle --no-latency-control --dns -r damon@198.44.140.113:8880 0.0.0.0/0
+
+123
+
+
+
+
+
+JGNi*T^Tg98sO%X
+
+
+
+ifconfig | grep mtu
+
+sudo ifconfig wlp4s0 mtu 1550 up
+
+
+
+
+
+sudo sysctl -w vm.swappiness=10
+sudo sysctl -e -w vm.vfs_cache_pressure=50
+
+
+
+
+ssh -qCL9899:localhost:9899 root@5.61.24.252 -p 2233 -t ssh -qCNDlocalhost:9899 root@5.61.27.139 -p 2233
+
+
+
+/opt/safing/portmaster/portmaster-start --data /opt/safing/portmaster update
+
+
+
+pkexec /home/damon/.local/share/gnome-shell/extensions/cpufreq@konkor/cpufreqctl --install
+
+
+
+repo-add ./emamrepo.db.tar.gz ./*
+
+[emamrepo]
+SigLevel = Optional TrustAll
+Server = file:///home/damon/archcraft/emamrepo/
+
+
+
+
+
+
+sudo cp -r /var/cache/pacman/pkg/* /mnt/b64b626a-842e-4a50-92ab-394dbf83530a/linux/iso/ArcoLinux/pkg
+
+
+
+
+sudo cp -r /mnt/b64b626a-842e-4a50-92ab-394dbf83530a/linux/iso/ArcoLinux/pkg/* /var/cache/pacman/pkg
+
+
+
+
+
+sudo paccache -rk1
+
+sudo pacman -Qqtd
+
+
+
+
+sudo pacman -U /var/cache/pacman/pkg/dkms-3.0.3-1-any.pkg.tar.zst
+
+
+
+
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+
+flatpak install flathub org.gnome.Boxes
+
+
+flatpak install flathub com.mattjakeman.ExtensionManager
+
+
+
+stylepak install-user
+
+stylepak install-system
+
+
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+
+
+bash
+
+        eval "$(starship init bash)"
+
+zsh
+
+	eval "$(starship init zsh)"
+
+
+
+yay -S chaotic-keyring chaotic-mirrorlist 
+
+
+
+
+pacman-key --init
+
+2a2f3a
+252a34
+20242c
+1D2128
+25272f
+
+sudo pacman -S mkinitcpio-archiso --needed
+
+
+
+
+git clone https://aur.archlinux.org/yay
+
+cd yay
+
+makepkg -si PKGBUILD
+
+
+
+
+
+
+sudo rm /var/lib/pacman/db.lck
+
+
+sudo pacman -Qtdq |  pacman -Rs -
+
+sudo pacman -S gnome-menus
+
+
+
+
+bash -c  "$(wget -qO- https://git.io/vQgMr)"
+
+
+
+sudo modprobe -a vmw_vmci vmmon
+
+sudo debtap -u
+
+
+
+
+
+
+sudo pacman -Sy chaotic-mirrorlist chaotic-keyring
+
+
+sudo pacman -Rns chaotic-mirrorlist chaotic-keyring
+
+find /var/cache/pacman/pkg/ -iname "*.part" -delete
+sudo pacman -Sy archlinux-keyring
+sudo pacman-key --populate archlinux
+sudo pacman-key --refresh-keys
+sudo pacman -Syyu
+ 
+
+pacman-key --list-keys
+
+pacman-key --delete 0706B90D37D9B881
+                     pacman-key --delete A3873AB27021C5DD39E0501AFBA220DFC880C036
+
+
+
+sudo pacman-key --populate chaotic
+sudo pacman -Sy chaotic-keyring
+sudo pacman -Su
+
+
+
+
+
+sudo pacman-key --init
+
+sudo pacman -S archlinux-keyring
+
+sudo pacman-key --populate
+
+
+
+
+
+
+sudo reflector --latest 10 --number 10 --sort rate --save /etc/pacman.d/mirrorlist
+
+
+
+
+sudo reflector --latest 10 --number 10 --sort score --save /etc/pacman.d/mirrorlist
+
+
+
+
+
+sudo pacman -Syyu base-devel --needed --noconfirm
+
+
+
+
+
+sudo reflector  -a 6 -f 6 -p https -p http --number 10 --sort rate  --save /etc/pacman.d/mirrorlist
+
+
+
+
+
+
+
+sudo pacman -Rns libreoffice-fresh
+
+
+sudo pacman -Rns $(pacman -Qtdq)
+
+sudo pacman -Rsn --noconfirm timeshift-autosnap
+
+
+
+222226
+
+
+Nvidia Driver:
+
+sudo mhwd -a pci nonfree 0300
+
+
+yay -S cuda cudnn --noconfirm
+
+yay -S nvidia-utils --noconfirm --needed nvidia-smi
+
+
+yay -S opencl-nvidia --needed
+
+
+
+
+ yay -S arc-solid-gtk-theme
+
+
+sudo pacman-mirrors -f 0
+
+
+
+
+
+
+sudo systemctl enable fstrim.timer
+sudo systemctl start fstrim.timer
+sudo systemctl status fstrim.timer
+
+
+
+
+
+
+sudo rmmod iwlwifi
+sudo modprobe iwlwifi 11n_disable=1
+sudo su
+echo "options iwlwifi 11n_disable=1" >> /etc/modprobe.d/iwlwifi.conf
+
+
+
+
+
+
+sudo pacman-mirrors -f 0
+
+sudo pacman-mirrors -f 10 --fasttrack
+
+sudo pacman-mirrors -c all
+
+sudo pacman-mirrors --fasttrack
+
+
+
+
+sudo systemctl enable fstrim.timer
+
+
+
+sudo pacman -Syyu --noconfirm
+
+
+
+
+sudo pacman -S --needed --noconfirm base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
+
+
+
+
+
+
+
+sudo pacman-mirrors -aS stable && sudo pacman -Syyu --noconfirm
+
+sudo pacman-mirrors -aS testing && sudo pacman -Syyu --noconfirm
+
+To reset custom mirrorlist:
+sudo pacman-mirrors -id
+
+
+
+
+
+sudo pacman -S --needed base-devel --noconfirm
+
+
+yay -S pamac-all
+
+
+yay -S --needed gnome-software gnome-software-packagekit-plugin
+
+
+pamac-gnome-integration
+
+
+
+
+sudo pacman -Rns $(pacman -Qtdq)
+
+sudo pacman -Rns libreoffice-fresh
+
+
+
+sudo pacman -S --needed --noconfirm android-tools  android-udev  clipgrab filezilla mpv networkmanager-l2tp networkmanager-openconnect networkmanager-openvpn networkmanager-pptp networkmanager-vpnc rhythmbox smplayer smplayer-skins smplayer-themes youtube-dl ffmpegthumbnailer ffmpegthumbs gparted vidcutter gcolor3 aria2 telegram-desktop gthumb nautilus-admin
+
+
+
+
+yay -S --needed nautilus-admin nautilus-empty-file
+
+
+
+
+sudo pacman -S --needed --noconfirm vidcutter gcolor3 aria2 telegram-desktop stacer-bin nautilus-admin
+
+
+
+yay -S --needed nautilus nautilus-admin
+
+
+
+
+
+
+Google Chrome:
+
+git clone https://aur.archlinux.org/google-chrome.git
+
+cd google-chrome/
+
+makepkg -si
+
+
+
+
+
+
+git clone https://github.com/PandaFoss/baph.git
+
+
+cd baph/
+
+sudo make install
+
+cd
+
+
+
+baph -i -n -N google-chrome
+
+baph -i -n -N eOVPN
+
+baph -i -n -N chrome-remote-desktop
+
+baph -i -n -N yay
+
+baph -i -n -N networkmanager-wireguard-git
+
+baph -i -n -N ocs-url powerline-shell
+
+
+
+
+
+
+baph -i -n -N vmware-workstation
+
+makepkg -si
+
+
+
+
+
+
+baph -i -n -N powerline-shell
+
+
+
+yay -S --needed powerline-shell
+
+
+
+
+sudo pacman -Rns $(pacman -Qtdq)
+
+
+
+
+
+
+
+
+
+
+yay -S --needed ffmpegthumbnailer aria2 eog networkmanager-l2tp  smplayer smplayer-skins smplayer-themes  mpv gcolor3 gnome-screenshot  htop  neofetch   unace lrzip file-roller totem
+
+
+
+
+
+sudo pacman -S wireguard-tools
+sudo nano /etc/wireguard/wg0.conf
+sudo systemctl enable wg-quick@wg0.service
+sudo systemctl start wg-quick@wg0.service
+sudo systemctl status wg-quick@wg0.service
+sudo wg
+systemctl enable wg-quick@wg0
+
+
+
+
+
+git clone https://aur.archlinux.org/ocs-url.git
+
+cd ocs-url
+
+makepkg -si
+
+
+sudo pacman -S wavemon
+sudo wavemon
+
+
+nmcli dev wifi
+
+
+
+
+latest NVIDIA drivers for Manjaro:
+
+git clone https://github.com/jonathonf/manjaro-nvidia.git
+cd manjaro-nvidia/nvidia-utils
+makepkg -Csrc
+sudo pacman -Udd *pkg*xz
+cd ../nvidia-414
+makepkg -Csric
+
+
+
+
+https://github.com/emam-damon/dotfiles.git
+
+
+
+
+
+
+sudo pacman -S gnome-tweak-tool
+yay -S chrome-gnome-shell
+
+
+pamac build conky-lua-nv
+
+sudo pacman -S jq curl
+
+
+
+
+
+
+
+bash -c  "$(wget -qO- https://git.io/vQgMr)"
+6 23 24 34 43 47 50 75 79 123 151 133
+
+
+
+
+
+
+Compiz alike windows effect
+
+
+
+sudo cp -r fonts/* /usr/share/fonts
+
+sudo cp -r themes/* /usr/share/themes
+
+sudo cp -r icons/* /usr/share/icons
+
+
+
+
+
+
+
+
+
+
+gnome-shell
+gnome-shell-extension-appindicator
+gnome-shell-extension-arcmenu
+gnome-shell-extension-dash-to-dock
+gnome-shell-extension-dash-to-panel
+gnome-shell-extension-desktop-icons-ng
+gnome-shell-extension-gamemode
+gnome-shell-extension-gsconnect
+gnome-shell-extension-material-shell
+gnome-shell-extension-nightthemeswitcher
+gnome-shell-extension-pop-shell
+gnome-shell-extension-unite
+gnome-shell-extensions
+
+sudo apt build-dep gnome-shell-extension-ubuntu-dock; git clone https://github.com/ewlsh/dash-to-dock; cd dash-to-dock; git checkout ewlsh/gnome-40; make; make install
+
+
+
+
+sudo nano /etc/environment
+
+QT_STYLE_OVERRIDE="GTK+"
+QT_STYLE_OVERRIDE="kvantum"
+
+
+
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+#QT_QPA_PLATFORMTHEME="gnome"
+QT_QPA_PLATFORMTHEME=qt5ct
+#QT_STYLE_OVERRIDE="kvantum"
+
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+
+#23262e
+
+
+
+gsettings set org.gnome.desktop.interface gtk-theme "vimix-dark-ruby"
+gsettings set org.gnome.desktop.wm.preferences theme "vimix-dark-ruby"  networkmanager-wireguard-git
+
+
+sudo pacman -S --needed gtk-engine-murrine gtk-engines
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+git clone https://github.com/vinceliuice/vimix-gtk-themes
+
+cd vimix-gtk-themes/
+
+
+ ./install.sh -l manjaro -c dark
+
+
+
+
+pamac install conky
+
+pamac build conky-manager
+
+
+/usr/share/doc/conky-..._pre/conky.conf
+
+mkdir -p ~/.config/conky
+
+cp /usr/share/doc/conky-1.11.6_pre/conky.conf ~/.config/conky/conky.conkyrc
+
+
+sudo  pacman -S qt5-base qt5-svg qt5-declarative qt5-quickcontrols
+
+
+
+
+
+
+
+Set all Qt app's to use GTK+ font & theme settings:
+
+pamac install qt5ct
+
+
+Set environment variables in ~/.profile by adding or updating the following lines:
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+
+
+are marked as orphans. If you want you can continue to use this two packages but
+    if you want use qgnomeplatform engine you need to modify your
+    sudo nano /etc/environment
+    with this changes:
+    remove or comment this:
+
+QT_QPA_PLATFORMTHEME=qt5ct
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+#QT_QPA_PLATFORMTHEME=gnome
+#QT_STYLE_OVERRIDE=kvantum
+
+    This is all
+
+
+
+
+
+
+
+Nvidia Driver:
+
+sudo mhwd -a pci nonfree 0300
+
+
+
+
+
+
+
+
+
+
+
+pamac install manjaro-tools-iso git
+
+git clone https://gitlab.manjaro.org/profiles-and-settings/iso-profiles.git ~/iso-profiles
+
+
+buildiso -f -p gnome -b stable
+
+
+iso will be in
+
+/var/cache/manjaro-tools/iso/
+
+
+
+
+sudo rm -r /var/lib/manjaro-tools/buildiso/
+
+paccache -ruk0
+
+sudo rm -r /var/cache/manjaro-tools/
+
+rm -r ~/.config/manjaro-tools
+
+sudo pacman -Sc
+
+
+
+We have switched into qgnomeplatform instead qt5ct so now
+    -> qt5ct
+    -> qt5-styleplugins
+    are marked as orphans. If you want you can continue to use this two packages but
+    if you want use qgnomeplatform engine you need to modify your /etc/environment
+    with this changes:
+
+sudo nano /etc/environment
+
+    remove or comment this:
+QT_QPA_PLATFORMTHEME=qt5ct
+
+   add:
+
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+QT_QPA_PLATFORMTHEME=gnome
+QT_STYLE_OVERRIDE=kvantum
+
+
+
+
+
+
+
+
+
+
+
+
+
+pip install powerline-shell     or
+
+git clone https://github.com/b-ryan/powerline-shell
+cd powerline-shell
+python setup.py install
+
+Add the following to your .bashrc file:
+
+
+function _update_ps1() {
+    PS1=$(powerline-shell $?)
+}
+
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
+
+
+
+
+
+sudo pacman -Syu networkmanager-l2tp strongswan xl2tpd net-tools
+
+
+
+
+
+
+
+
+
+
+sudo pacman -Syu youtube-dl ffmpeg aria2 stacer filezilla eog networkmanager-l2tp  smplayer smplayer-skins smplayer-themes vidcutter rhythmbox clipgrab telegram-desktop appimagelauncher gthumb mpv plank htop neofetch nautilus nautilus-admin nautilus-empty-file  --noconfirm
+
+ plank
+
+
+yay -S gnome-disk-utility nautilus nautilus-admin nautilus-empty-file --noconfirm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Downloading Packages without Installing
+sudo pacman -Sw
+
+sudo pacman -Sc --noconfirm
+
+sudo pacman -Scc
+
+
+orphen app:
+sudo pacman -Rns $(pacman -Qtdq)
+
+
+
+
+
+
+Network Operations:
+Network Adapters and IP Address:
+ip a
+
+Get information about wired network adapters
+ifconfig
+
+Get information about wireless network adapters;
+iwconfig
+
+Retrieve ip information using Inxi:
+inxi –ip
+
+
+
+
+
+
+
+sudo visudo
+NOPASSWD:
+
+
+echo "nameserver 1.1.1.1" | tee /etc/resolv.conf > /dev/null
+
+
+
+CLEAN:
+
+sudo pacman -Scc
+
+sudo pacman -Rns $(pacman -Qtdq) --noconfirm
+
+
+sudo du -sh ~/.cache/
+
+rm -rf ~/.cache/*
+
+
+sudo pacman -S rmlint
+
+rmlint /home/damon
+
+sudo journalctl --vacuum-size=50M
+
+
+
+
+
+
+
+firewall:
+sudo pacman -Syu firewalld
+sudo systemctl enable --now firewalld.service
+
+
+
+
+systemctl disable --now snapd.socket
+
+sudo pacman -Rsun snapd --noconfirm
+
+sudo rm -rf /var/lib/snapd/snap /snap
+
+
+
+
+
+sudo pacman -S snapd --noconfirm
+
+sudo systemctl enable --now snapd.socket
+
+sudo ln -s /var/lib/snapd/snap /snap
+
+sudo snap install snap-store
+
+
+
+To test your system, install the hello-world snap and make sure it runs correctly:
+
+$ sudo snap install hello-world
+hello-world 6.3 from Canonical✓ installed
+$ hello-world
+Hello World!
+
+
+
+
+
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+We have switched into qgnomeplatform instead qt5ct so now
+    -> qt5ct
+    -> qt5-styleplugins
+    are marked as orphans. If you want you can continue to use this two packages but
+    if you want use qgnomeplatform engine you need to modify your /etc/environment
+    with this changes:
+    remove or comment this:
+    -> QT_QPA_PLATFORMTHEME=qt5ct
+    add:
+    -> QT_AUTO_SCREEN_SCALE_FACTOR=1
+    -> QT_QPA_PLATFORMTHEME=gnome
+    -> QT_STYLE_OVERRIDE=kvantum
+    This is all
+
+pamac install flatpak
+
+pamac install gnome-software
+
+flatpak search vlc
+
+flatpak info org.videolan.VLC
+
+flatpak list
+
+flatpak upgrade
+
+flatpak uninstall org.videolan.VLC
+
+pamac remove flatpak
+
+sudo rm -r /var/lib/flatpak
+rm -r ~/.local/share/flatpak
+
+
+
+
+
+
+
+
+pip install speedtest-cli
+
+or
+
+git clone https://github.com/sivel/speedtest-cli.git
+cd speedtest-cli
+python setup.py install
+
+
+speedtest-cli --no-upload --bytes
+
+speedtest-cli --list
+
+mtn MSD
+speedtest-cli --no-upload --bytes --server 10076
+
+
+speedtest-cli --no-upload --bytes --server 19352
+
+COX
+speedtest-cli --no-upload --bytes --server 10076
+
+
+
+
+
+
+
+
+nmap --script vuln 107.174.20.87
+
+
+
+
+
+
+
+echo "nameserver 9.9.9.10" | tee /etc/resolv.conf > /dev/null
+
+Mirror list generated and saved to: /etc/pacman.d/mirrorlist
+
+To reset custom mirrorlist
+
+sudo pacman-mirrors -id
+
+
+To remove custom config run
+
+
+
+
+
+
+
+
+
+
+sudo fallocate  -l  2G /swemamfile
+
+
+sudo chmod 600 /swemamfile
+
+
+sudo mkswap /swemamfile && sudo swapon /swemamfile
+
+
+sudo nano /etc/fstab
+
+/swemamfile  swap  swap  defaults 0 0
+
+sudo swapon --show
+
+sudo free -h
+
+
+
+
+
+
+echo "/swapfile swap swap defaults 0 0" > /etc/fstab
+
+
+
+
+sudo su
+
+echo "vm.swappiness=10" > /etc/sysctl.d/100-manjaro.conf
+
+
+cat /proc/sys/vm/swappiness
+
+sudo nano /etc/sysctl.conf
+
+
+
+
+
+
+
+
+sudo pacman -Syu youtube-dl ffmpeg aria2 stacer htop neofetch filezilla eog networkmanager-l2tp smplayer smplayer-skins smplayer-themes mpv vidcutter rhythmbox clipgrab --noconfirm
+
+
+auto-cpufreq-git 1.5.2.r193.a91d4ba-2
+
+systemctl enable auto-cpufreq
+
+systemctl start auto-cpufreq
+
+systemctl status auto-cpufreq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sudo pacman -S --needed linux-zen linux-zen-headers
+
+sudo nano /etc/default/grub
+
+GRUB_DISABLE_SUBMENU=y
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+sudo pacman -Rns linux-zen linux-zen-headers
+
+
+
+
+
+
+
+
+
+
+sudo pacman -S linux-hardened linux-hardened-headers
+
+
+
+
+
+
+
+
+
+
+
+/etc/default/grub
+
+
+
+sudo nano /etc/default/grub
+
+
+
+
+
+
+
+
+
+GRUB_DISABLE_OS_PROBER=false
+to /etc/default/grub
+
+
+
+sudo su
+
+echo GRUB_DISABLE_OS_PROBER=false|sudo tee -a /etc/default/grub && sudo update-grub
+
+
+
+sudo nano /etc/default/grub
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+sudo update-grub
+
+
+
+alias update='sudo pacman -Syyu'
+alias install='sudo pacman -S'
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias mirror="sudo reflector -f 10 -l 10 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 10 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
+alias iso="sudo mkarchiso -v ."
+alias work="sudo rm -rf work/"
+alias out="sudo rm -rf out/"
+
+
+
+
+protonvpn-linux-gui
+
+
+
+sudo su
+
+echo "disable ipv6" >> /etc/sysctl.conf
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
+sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sudo sysctl -w net.ipv6.conf.lo.disable_ipv6=1
+echo 1 > /proc/sys/net/ipv6/conf/lo/disable_ipv6
+echo 1 > /proc/sys/net/ipv6/conf/enp5s0f1/disable_ipv6
+echo 1 > /proc/sys/net/ipv6/conf/wlp4s0/disable_ipv6
+
+
+
+
+
+
+
+
+Installing Tor Browser
+
+sudo pacman -S torbrowser-launcher
+torbrowser-launcher
+
+	sudo sed "s/\(GRUB_CMDLINE_LINUX=\)\"\"/\1\"acpi_osi=Linux acpi_backlight=vendor\"/" /etc/default/grub -i; sudo update-grub
+
+
+
+
+	LightDM:
+
+sudo pacman -S lightdm
+
+sudo pacman -S lightdm-gtk-greeter-settings
+
+sudo systemctl enable lightdm.services
+
+
+
+
+gtk-update-icon-cache /home/damon/.icons/ZafiroCircle-ED/
+gtk-update-icon-cache /home/damon/.icons/Flatery-Dark/
+gtk-update-icon-cache /home/damon/.icons/Zafiro-Nord-Black-Blue-ED/
+gtk-update-icon-cache /home/damon/.icons/Zafiro-Icons-Light-ED/
+gtk-update-icon-cache /home/damon/.icons/ZafiroCircle-Light-ED/
+
+
+
+
+rsync:
+
+rsync -aAXv --delete --exclude=/dev/* --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/run/* --exclude=/mnt/* --exclude=/media/* --exclude="swapfile" --exclude="lost+found" --exclude=".cache" --exclude="Downloads" --exclude=".VirtualBoxVMs" --exclude=".ecryptfs" /source /destination
+
+
+
+
+sudo systemctl enable tlp.service
+sudo systemctl mask systemd-rfkill.socket
+sudo systemctl mask systemd-rfkill.service
+sudo tlp start
+
+
+
+
+cd /mnt/6462DA0903619971/Linux/Apps/SOME/
+
+sudo cp -r fetch sfetch sysinfo /usr/bin/
+
+sudo chmod +x fetch sfetch sysinfo
+
+
+
+
+
+sudo nano /etc/NetworkManager/conf.d/no-systemd-resolved.conf
+
+[main]
+systemd-resolved=false
+
+
+sudo systemctl enable systemd-resolved.service
+sudo systemctl start systemd-resolved.service
+sudo systemctl status systemd-resolved.service
+
+
+sshuttle --no-latency-control --dns -r damon@198.44.140.66:1899 0.0.0.0/0 --disable-ipv6
+
+sshuttle --no-latency-control --dns -r damon@216.146.25.98:1899 0.0.0.0/0
+
+sshuttle --no-latency-control --dns -r damon@216.146.25.86:1899 0.0.0.0/0
+
+--disable-ipv6
+
+mks.gl.allowBlacklistedDrivers = "TRUE"
+
+
+sudo pacman -Sy repo gperf schedtool perl-switch bc ccache vim java-environment inetutils lib32-zlib lib32-ncurses lib32-readline lib32-ncurses5-compat-libs
+
+
+
+

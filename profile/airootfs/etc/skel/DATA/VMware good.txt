@@ -1,0 +1,248 @@
+sudo mkdir /etc/init.d
+
+
+
+sudo pacman -Sy --needed open-vm-tools xf86-video-vmware xf86-input-vmmouse vmware-keymaps gtkmm3 webkit2gtk libxcrypt-compat gtk3 gcr netctl libxtst dkms fuse2 libcanberra fuse2 gtkmm pcsclite libcanberra
+
+
+
+
+sudo pacman -S --needed open-vm-tools
+sudo systemctl enable vmtoolsd.service
+sudo reboot
+
+
+
+sudo systemctl enable vmtoolsd
+reboot
+
+hostnamectl
+sudo systemctl status vmtoolsd
+
+
+
+
+sudo systemctl enable vmware-networks.service
+sudo systemctl start vmware-networks.service
+
+
+
+
+
+
+
+sudo pacman -Sy --needed fuse2 gtkmm pcsclite libcanberra 
+
+yay -S --needed --noconfirm --needed ncurses5-compat-libs
+
+Install Using VMware bundle
+
+
+sudo chmod +x VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
+
+sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
+
+
+
+
+cat <<EOF | sudo tee /etc/systemd/system/vmware.service
+[Unit]
+Description=VMware daemon
+Requires=vmware-usbarbitrator.service
+Before=vmware-usbarbitrator.service
+After=network.target
+
+[Service]
+ExecStart=/etc/init.d/vmware start
+ExecStop=/etc/init.d/vmware stop
+PIDFile=/var/lock/subsys/vmware
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+cat <<EOF | sudo tee /etc/systemd/system/vmware-usbarbitrator.service
+[Unit]
+Description=VMware USB Arbitrator
+Requires=vmware.service
+After=vmware.service
+
+[Service]
+ExecStart=/usr/bin/vmware-usbarbitrator
+ExecStop=/usr/bin/vmware-usbarbitrator --kill
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+
+cat <<EOF | sudo tee /etc/systemd/system/vmware-networks.service
+[Unit]
+Description=VMware networks
+Requires=vmware.service
+After=vmware.service
+
+
+
+[Service]
+ExecStart=/usr/bin/vmware-networks
+ExecStop=/usr/bin/vmware-networks --kill
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+
+cat <<EOF | sudo tee /etc/systemd/system/vmware-workstation-server.service
+[Unit]
+Description=VMware Workstation Server
+Requires=vmware.service
+After=vmware.service
+
+[Service]
+ExecStart=/etc/init.d/vmware-workstation-server start
+ExecStop=/etc/init.d/vmware-workstation-server stop
+PIDFile=/var/lock/subsys/vmware-workstation-server
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+
+
+
+Before using VMware, you need to reboot or load vmw_vmci and vmmon kernel modules in a terminal on root: 
+
+sudo modprobe -a vmw_vmci vmmon
+
+
+==> You may also need to enable some of the following services:
+- vmware-networks: to have network access inside VMs
+- vmware-usbarbitrator: to connect USB devices inside VMs
+These services can be activated during boot by enabling .service units or only when a VM is started by enabling .path units.
+
+
+
+
+
+
+
+
+
+Start VMware services:
+
+sudo systemctl daemon-reload
+sudo systemctl start vmware.service vmware-usbarbitrator.service
+
+
+sudo systemctl daemon-reload
+sudo systemctl start vmware-networks.service
+
+
+
+Recompiling VMware kernel modules
+
+sudo  vmware-modconfig --console --install-all
+
+sudo vmware-modconfig --console --install-all
+
+
+
+
+
+
+sudo modprobe -a vmw_vmci vmmon
+
+
+
+systemctl enable vmware-networks.service
+systemctl enable vmware-usbarbitrator.service
+systemctl enable vmware-networks
+systemctl enable vmware-usbarbitrator
+
+
+
+
+https://techhut.tv/windows-11-vmware-guide-linux/
+
+
+
+
+
+
+Uninstalling VMware Workstation on Arch / Manjaro – bundle
+
+
+To uninstall VMware you need the product name, check installed products by running the command.
+
+vmware-installer -l
+
+
+Run uninstallation with -u option.
+
+sudo  vmware-installer -u vmware-workstation --required
+
+
+For installation from AUR, use:
+
+yay -Rns vmware-workstation
+
+
+sudo vmhgfs-fuse -o allow_other -o auto_unmount .host:/home/damon /home/damon/Public
+
+
+cat <<EOF | sudo tee /etc/systemd/system/vmware-networks.service
+[Unit]
+Description=VMware Networks
+Wants=vmware-networks-configuration.service
+After=vmware-networks-configuration.service
+
+[Service]
+Type=forking
+ExecStartPre=-/sbin/modprobe vmnet
+ExecStart=/usr/bin/vmware-networks --start
+ExecStop=/usr/bin/vmware-networks --stop
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+
+
+sudo vmhgfs-fuse -o allow_other -o auto_unmount .host:/Public /home/emam/Public
+
+
+- vmtoolsd.service: most of the guest tools
+- vmware-vmblock-fuse.service: needed for drag-and-drop functionality
+- vmware-thinprint.service: ThinPrint service to access to host printers
+- vgauth.service: Guest Authentification service
+- vmware-caf.service: Common Agent Framework servic
+
+
+
+
+
+sudo systemctl enable vmtoolsd.service
+sudo systemctl enable vmware-vmblock-fuse.service
+sudo systemctl enable vgauth.service
+sudo systemctl enable vmware-caf.service
+
+
+
+sudo systemctl start vmtoolsd.service
+sudo systemctl start vmware-vmblock-fuse.service
+sudo systemctl start vgauth.service
+sudo systemctl start vmware-caf.service
+
+
+
+
+

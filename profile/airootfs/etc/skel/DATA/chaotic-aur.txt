@@ -1,0 +1,48 @@
+sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+
+sudo pacman-key --lsign-key FBA220DFC880C036
+
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
+Append (adding to the end of the file) to 
+
+sudo nano /etc/pacman.conf
+
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist 
+
+
+
+
+0706B90D37D9B881
+
+
+
+
+
+Recommendations:
+
+    You may want to use powerpill to download from all mirrors simultaneously. We recommend doing updates this way: 
+    
+  sudo pacman -Sy && sudo powerpill -Su && paru -Su
+    
+    
+    Make sure to insert all mirrors in your pacman.conf or use chaotic-mirrorlist with all of them active if using powerpill.
+    
+    
+    If you are using other third party repositories, we recommend putting Chaotic-AUR prior to them in 
+    
+    /etc/pacman.conf
+    Since we update most packages hourly and follow AUR PKGBUILDs, this repository is more suitable as first option when downloading packages.
+   
+   
+    If you need to omit a package update to use locally built ones (e.g: with native optimizations), you can add 'IgnorePkg = ...' to repo's section in /etc/pacman.conf
+    
+    
+    You can pick the repository which to download a package from like this: pacman -S chaotic-aur/dxvk-mingw-git. Some AUR helpers support it too, e.g: paru -S aur/firefox-hg
+    
+    
+    
+    You must have multilib repository enabled.
+
+

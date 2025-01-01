@@ -1,0 +1,168 @@
+
+
+sudo envycontrol -s nvidia --force-comp
+
+
+
+sudo modprobe vboxguest vboxvideo vboxsf vboxdrv 
+
+sudo groupadd vboxsf
+sudo groupadd uucpgroup
+sudo groupadd vboxusers
+sudo usermod -aG vboxusers emam
+sudo usermod -aG vboxsf emam
+sudo usermod -aG uucpgroup emam
+
+
+curl -sS https://starship.rs/install.sh | sh
+
+
+y
+
+
+sudo pacman -Sy --needed intel-ucode virtualbox-guest-utils-nox virtualbox-ext-oracle video-downloader
+
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+
+systemctl enable --now nvidia-resume.service
+
+sudo systemctl enable switcheroo-control.service
+sudo systemctl start --now switcheroo-control.service
+
+
+
+reboot
+
+
+gsettings set org.gnome.mutter experimental-features [\"kms-modifiers\"]
+
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
+
+
+
+gsettings set org.gnome.shell disable-extension-version-validation true
+
+
+gnome-extensions install --force gsconnect@andyholmes.github.io.zip
+
+
+
+gsettings set org.gnome.desktop.interface gtk-theme "Vimix-dark-ED"
+
+
+gsettings set org.gnome.desktop.wm.preferences theme "Vimix-dark-ED"
+
+
+
+
+
+
+sshuttle --no-latency-control --dns -r damon@198.44.140.66:1899 0.0.0.0/0
+
+
+sshuttle --no-latency-control --dns -r damon@107.173.171.140:1899 0.0.0.0/0 -x 107.173.171.140
+
+
+sshuttle --no-latency-control --dns -r damon@149.102.252.245:1899 0.0.0.0/0 --disable-ipv6
+
+
+ssh -fNMS /tmp/sshtunnel -D 7070 -p 1899 damon@45.58.40.65
+
+
+sshuttle --no-latency-control --dns -r damon@216.146.25.98:1899 0.0.0.0/0 --disable-ipv6
+
+
+❯ sshuttle --no-latency-control --dns -r damon@216.146.25.86:8880 0.0.0.0/0
+
+
+
+
+sshuttle --no-latency-control --disable-ipv6 --dns -r damon@107.175.33.3:1899 0.0.0.0/0
+
+
+
+JGNi*T^Tg98sO%X
+
+yes
+
+
+
+
+libdisplay-info
+libliftoff
+seatd
+vulkan-validation-layers
+xcb-util-errors 
+
+
+
+
+RameshR@66
+
+rameshR@77R
+
+emam.damon@gmail.com
+
+twr.buz@gmail.com
+
+
+scythian.eagle@gmail.com
+
+y
+
+
+
+
+
+root
+
+reboot
+
+
+
+ds00.scythian-eagle.lol
+
+
+
+poweroff
+
+
+sudo systemctl daemon-reload
+
+
+
+
+
+sudo nano /etc/mkinitcpio.conf
+
+MODULES="nvidia nvidia_modeset nvidia_uvm nvidia_drm"
+
+Remove kms hook
+
+sudo mkinitcpio -P linux
+
+sudo nano /etc/default/grub 
+
+nvidia_drm.modeset=1
+
+
+
+
+
+
+sudo nano /etc/default/grub
+
+intel_iommu=on
+
+
+
+
+sudo -E bash ~/linuxloops
+
+sudo bash linuxloops -distro ChromeOS-Flex --environment "Full" -dst /dev/sdc -a -n -H ChromeOS-Flex 
+
+
+
+

@@ -1,0 +1,222 @@
+
+flatpak install flathub io.github.Foldex.AdwSteamGtk
+
+flatpak install flathub com.usebottles.bottles
+
+flatpak install flathub com.github.tchx84.Flatseal
+
+flatpak install flathub org.gnome.Boxes
+
+flatpak install flathub io.github.flattool.Warehouse
+
+flatpak install flathub io.github.giantpinkrobots.flatsweep
+
+flatpak install flathub com.netxms.NetXMSClient
+
+flatpak install flathub io.github.alexkdeveloper.zodiac
+
+flatpak install flathub com.github.alexkdeveloper.astronum
+
+flatpak install flathub xyz.ketok.Speedtest
+
+flatpak install flathub io.github.fabrialberio.pinapp
+
+flatpak install flathub org.dupot.easyflatpak
+
+flatpak install flathub io.github.prateekmedia.appimagepool
+
+
+
+
+flatpak install flathub me.proton.Pass
+
+flatpak install flathub io.github.prateekmedia.appimagepool
+
+flatpak install flathub com.github.donadigo.appeditor
+
+flatpak install flathub com.github.qarmin.czkawka
+
+flatpak install flathub org.linux_hardware.hw-probe
+
+flatpak install flathub io.github.arunsivaramanneo.GPUViewer
+
+flatpak install flathub page.kramo.Sly
+
+flatpak install flathub io.github.vmkspv.netsleuth
+
+flatpak install flathub net.codelogistics.webapps
+
+flatpak install flathub org.gnome.Builder
+
+flatpak install flathub com.github.joseexposito.touche
+
+flatpak install flathub org.gnome.Epiphany
+
+flatpak install flathub com.belmoussaoui.ReadItLater
+
+flatpak install flathub com.github.GradienceTeam.Gradience
+
+flatpak install flathub com.ktechpit.ultimate-media-downloader
+
+flatpak install flathub org.gnome.Epiphany
+
+flatpak install flathub io.github.jonmagon.kdiskmark
+
+flatpak install flathub io.atom.Atom
+
+flatpak install flathub io.github.JaGoLi.ytdl_gui
+
+flatpak install flathub com.visualstudio.code-oss
+
+
+
+
+
+sudo dd if=chromeos_15886.74.0_reven_recovery_stable-channel_mp-v6.bin of=/dev/sdc bs=4M status=progress
+
+
+
+
+
+
+
+flatpak install flathub org.cubocore.CoreKeyboard
+
+flatpak install flathub uk.org.greenend.chiark.sgtatham.putty
+
+flatpak install flathub io.atom.Atom
+
+flatpak install flathub org.kde.plasmatube
+
+
+
+sudo flatpak override --filesystem=$HOME/.themes
+
+
+sudo flatpak override --filesystem=xdg-config/gtk-3.0:ro
+sudo flatpak override --filesystem=xdg-config/gtk-4.0:ro
+
+sudo flatpak override org.gnome.Calculator --env=GTK_THEME=Blue-rimless
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
