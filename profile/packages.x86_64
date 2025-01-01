@@ -2,13 +2,14 @@
 #alsa-utils
 amd-ucode
 arch-install-scripts
+archiso
 archinstall
 b43-fwcutter
 base
 bcachefs-tools
 bind
 bolt
-brltty
+# brltty
 broadcom-wl
 btrfs-progs
 clonezilla
@@ -26,7 +27,6 @@ dosfstools
 e2fsprogs
 edk2-shell
 efibootmgr
-#espeakup
 ethtool
 exfatprogs
 f2fs-tools
@@ -37,7 +37,6 @@ gnu-netcat
 gpart
 gpm
 gptfdisk
-#grml-zsh-config
 #grub
 hdparm
 hyperv
@@ -46,13 +45,14 @@ irssi
 iw
 iwd
 jfsutils
-kitty-terminfo
+# kitty-terminfo
 ldns
 less
 lftp
 libfido2
 libusb-compat
 linux
+linux-headers
 linux-atm
 linux-firmware
 linux-firmware-marvell
@@ -80,8 +80,8 @@ nmap
 ntfs-3g
 nvme-cli
 open-iscsi
-open-vm-tools
-openconnect
+# open-vm-tools
+# openconnect
 openpgp-card-tools
 openssh
 openvpn
@@ -92,13 +92,12 @@ pcsclite
 ppp
 pptpclient
 pv
-#qemu-guest-agent
 refind
 reflector
 reiserfsprogs
 rp-pppoe
 rsync
-rxvt-unicode-terminfo
+# rxvt-unicode-terminfo
 screen
 sdparm
 sequoia-sq
@@ -112,14 +111,13 @@ systemd-resolvconf
 tcpdump
 terminus-font
 testdisk
-tmux
+# tmux
 tpm2-tools
 tpm2-tss
 udftools
 usb_modeswitch
 usbmuxd
 usbutils
-vim
 #virtualbox-guest-utils-nox
 vpnc
 wireless-regdb
@@ -150,6 +148,8 @@ xorg
 
 ## Touchpad and Mouse ------------------------------
 xorg-xinput
+xorg-xkill
+xorg-xwayland
 xf86-input-libinput
 
 ## GPU Drivers (Intel/AMD/VM) ------------------------------
@@ -162,13 +162,13 @@ mesa
 mesa-utils
 
 ## GPU Drivers (Nvidia) ------------------------------
-xf86-video-nouveau
+# xf86-video-nouveau
 nvidia
 nvidia-utils
 nvidia-settings
 
 ## Hypervisors ------------------------------
-virtualbox-guest-utils
+# virtualbox-guest-utils
 qemu-guest-agent
 open-vm-tools
 xf86-input-vmmouse
@@ -186,8 +186,8 @@ networkmanager-vpnc
 network-manager-sstp
 nm-connection-editor
 network-manager-applet
-ufw
-gufw
+# ufw
+# gufw
 
 ## Bluetooth
 bluez
@@ -222,14 +222,14 @@ gst-plugins-ugly
 gst-plugins-bad
 
 ## Print
-cups
-cups-pdf
-cups-filters
-ghostscript
-gsfonts
-foomatic-db-engine
-foomatic-db
-gutenprint
+# cups
+# cups-pdf
+# cups-filters
+# ghostscript
+# gsfonts
+# foomatic-db-engine
+# foomatic-db
+# gutenprint
 
 ## Installer ------------------------------
 
@@ -267,13 +267,13 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 viewnior
-atril
+# atril
 
 # Media
 mpc
 mpd
 ncmpcpp
-mplayer
+mpv
 
 # Utilities
 acpi
@@ -298,9 +298,9 @@ polybar
 python-pywal
 #rofi
 maim
-simplescreenrecorder
+# simplescreenrecorder
 slop
-timeshift
+# timeshift
 udisks2
 wmctrl
 wmname
@@ -330,13 +330,13 @@ archcraft-funscripts
 archcraft-help
 archcraft-neofetch
 archcraft-welcome
-archcraft-music
+# archcraft-music
 archcraft-omz
 archcraft-arandr
 archcraft-randr
 archcraft-scripts
 archcraft-ranger
-archcraft-vim
+# archcraft-vim
 archcraft-config-geany
 archcraft-config-music
 archcraft-config-qt
@@ -365,12 +365,12 @@ libheif
 ## Files
 gvfs
 gvfs-mtp
-gvfs-afc
-gvfs-gphoto2
-gvfs-smb
-gvfs-google
+# gvfs-afc
+# gvfs-gphoto2
+# gvfs-smb
+# gvfs-google
 highlight
-trash-cli
+# trash-cli
 ueberzug
 xdg-user-dirs
 xdg-user-dirs-gtk
@@ -412,8 +412,7 @@ htop
 nethogs
 ncdu
 powertop
-ranger
-vim
+# ranger
 
 ## AUR Packages
 betterlockscreen
@@ -427,6 +426,6 @@ obmenu-generator
 perl-linux-desktopfiles
 rofi-lbonn-wayland-git
 xfce-polkit
-yay
+paru
 
 ## EOF ------------------------------
